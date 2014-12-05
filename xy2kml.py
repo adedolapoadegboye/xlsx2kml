@@ -187,10 +187,10 @@ class New_Toplevel_1(object):
         filetypes = [('Excel Document', '*.xlsx')])
         
         if excel_file == "":
-            showwarning('Fail...', '.XLSX is not selected!')    
+            showwarning('Fail!', '.XLSX is not selected!')    
         else:    
             excel_file_name = excel_file.split('/')[-1]
-            showinfo('Success...', excel_file_name + ' is selected.')
+            showinfo('Success!', excel_file_name + ' is selected.')
             workbook = load_workbook(excel_file)
             sheet_names = [foo.title for foo in workbook]
             self.TCombobox1['values'] = sheet_names
@@ -388,14 +388,15 @@ class New_Toplevel_1(object):
         kml_file = open(dir_name + '/xy2kml.kml', 'w')
         kml_file.write(str(results)[3:-4])
         kml_file.close()
+        showinfo('Done!', 'Operation successful.')
       
            
     def transform_xlsx(self):
     
         wb = Workbook()
-        dest_filename = dir_name + '/transformed.xlsx'
+        dest_filename = dir_name + '/transformed_' + transformed_crs.replace('/', '-') + '.xlsx'
         ws = wb.active
-        ws.title = transformed_crs.replace('/', '-')
+        ws.title = 'transformed'
 
         query_result_set_x = []
         query_result_set_y = []
@@ -433,7 +434,7 @@ class New_Toplevel_1(object):
                 (query_result_set_y[row])           
 
         wb.save(filename = dest_filename)
-        
+                    
         
     def crs(self):
     
