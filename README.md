@@ -57,10 +57,10 @@ needed to specify new CRS for transformation
 
 FAQ
 ---
-* Q: I press 'Generate KML' button and nothing happened, what's the matter?
-* A: You're sure to specify sheet name, x & y column names and EPSG value.
+Q: I press 'Generate KML' button and nothing happened, what's the matter?
+A: You're sure to specify sheet name, x & y column names and EPSG value.
 
-* Q: KML has been generated but shows wrong location...
-* A: You need to define correct EPSG value to perform operation properly.
+Q: KML has been generated but shows wrong location...
+A: You need to define correct EPSG value to perform operation properly.
 
 
